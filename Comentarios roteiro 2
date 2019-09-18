@@ -1,0 +1,20 @@
+--Comentários do Roteiro 2
+-- Questão 3
+-- Para impedir os comandos 3 mas ainda permitir os comandos 4 a solução encontrada foi mudar o domínio do atributo para smallint.
+
+-- Questão 5
+-- A solução encontrada foi adicionar uma constraint UNIQUE em id, a fim de não permitir IDs repetidos.
+
+-- Questão 10
+-- ON DELETE CASCADE
+-- Deletar o funcionário da tabela funcionario fez com que a atividade que ele era responsável
+-- também fosse deletada da tabela tarefas.
+
+-- ON DELETE RESTRICT
+-- Deletar o funcionario da tabela funcionario não foi permitido pois este ainda era referenciado 
+-- na tabela tarefas.
+
+-- Questão 11 
+-- ON DELETE SET NULL
+-- Não é possível deletar por causa do SET NULL, pois subtitui todos os valores da tupla por null. Pelo fato de cpf ser chave estrangeira na tabela tarefas, esta propriedade também a afeta. Porém, em tarefas, existe a constraint que impede o cpf do funcionario seja null se este estiver responsável por uma tarefa em status 'E'. O SET NULL e essa constraint entram em conflito e o funcionario nao é deletado. 
+

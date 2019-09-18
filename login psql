@@ -1,0 +1,2 @@
+ssh -o ServerAliveInterval=30 mauricio@150.165.15.11 -p 45600
+psql -d usuario_db
