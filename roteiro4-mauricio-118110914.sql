@@ -30,5 +30,7 @@ SELECT fname || ' ' || minit || ' ' || lname as full_name, salary FROM employee 
 SELECT p.pname, d.dname from project as p, department as d WHERE (p.dnum = d.dnumber); 
 --Q16
 SELECT p.pname, e.fname from project as p, department as d, employee as e WHERE (p.dnum = d.dnumber and d.mgrssn = e.ssn); 
+--Q17
+SELECT p.pname, e.fname FROM project as p, works_on as w, employee as e WHERE (p.pnumber = w.pno) and (e.ssn = w.essn);
 --Q18
-
+SELECT d.dependent_name, e.fname AS emp_fname, d.relationship FROM dependent AS d, employee AS e, works_on AS w WHERE(w.essn = e.ssn) AND (w.pno = '91') AND (d.essn = e.ssn);
